@@ -1,6 +1,6 @@
 [922. Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
 
-'''c++
+```c++
 class Solution {
 public:
     vector<int> sortArrayByParityII(vector<int>& A){
@@ -37,5 +37,4 @@ public:
 };
 
 //total.assign(A.begin(),A.end());
-
-'''
+```
