@@ -1,4 +1,5 @@
 [922. Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
+
 '''
 class Solution {
 public:
@@ -20,16 +21,13 @@ public:
            }
         }
         return A;
-    }
-    
+    }    
     bool is_odd(int num){
         return num &1;        
-    }
-    
+    }    
     bool is_even(int num){
         return !(num & 1);
-    }
-    
+    }    
     void swap_item(vector<int>& A,int i,int j){
         int temp = A[i];
         A[i] = A[j];
