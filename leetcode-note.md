@@ -38,3 +38,13 @@ public:
 
 //total.assign(A.begin(),A.end());
 ```
+[183. Customers Who Never Order](https://leetcode.com/problems/customers-who-never-order/)
+
+```mysql
+# Write your MySQL query statement below
+SELECT A.Name as 'Customers' from Customers A
+WHERE A.Id NOT IN (
+    SELECT B.CustomerId from Orders B
+)
+
+```
