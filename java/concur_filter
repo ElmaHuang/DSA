@@ -3,10 +3,10 @@ import java.io.*;
 public class FilterDemo{
   public static void main(String []args){
     Filter f = new Filter();
-    String fileName = "SAE.txt";
-    String Output_fileName_1 = "";
-    String Output_fileName_2 = "";
-    String Output_fileName_3 = "";
+    String fileName = "SAE.txt"; //path + file name
+    String Output_fileName_1 = "EAM.txt";
+    String Output_fileName_2 = "APKY.txt";
+    String Output_fileName_3 = "EAKK.txt";
     f.Filter(input_fileName,Output_fileName_1,Output_fileName_2,Output_fileName_3);
   }  
 }
