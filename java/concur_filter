@@ -1,0 +1,23 @@
+import java.io.*;
+
+public class TxtFilter{
+  public static void main(String []args){
+    //read file
+    //filter(line)
+    //write file
+  }
+}
+
+class Filter{
+    if(){
+        
+    }else if(){
+        
+    }else{
+        
+    }
+    switch(level):
+        case 0:
+        case 1:
+        case 2:
+}
