@@ -1,23 +1,52 @@
 import java.io.*;
 
-public class TxtFilter{
+public class FilterDemo{
   public static void main(String []args){
-    //read file
-    //filter(line)
-    //write file
-  }
+    Filter f = new Filter();
+    String fileName = "SAE.txt";
+    String Output_fileName_1 = "";
+    String Output_fileName_2 = "";
+    String Output_fileName_3 = "";
+    f.Filter(input_fileName,Output_fileName_1,Output_fileName_2,Output_fileName_3);
+  }  
 }
 
-class Filter{
-    if(){
-        
-    }else if(){
-        
-    }else{
-        
+
+
+
+
+public class Filter(){
+  String input_line = null;
+  public Filter(String input_fileName,String Output_fileName_1,String Output_fileName_2,String Output_fileName_3){
+    try{
+      //read file
+      FileReader fileReader = new FileReader(input_fileName);
+      BufferReader bufferReader = new BufferReader(input_fileName);
+      
+      //filer
+      while((input_line = bufferReader.readLine()) != null){
+        Output_Name = Filter(input_line);    
+      }
+      
+      //write file
+      FileOutputStream outputStream =new FileOutputStream(Output_Name);
+      outputStream.write(input_line);
+      
+    }catch(FileNotFoundException e){
+         System.out.println("Unable to open file fileName ");
+         
+    }catch(IOException e){
+        System.out.println("Error read/writing file");      
+      
     }
-    switch(level):
-        case 0:
-        case 1:
-        case 2:
+  }
+  public String Filter(String line){
+    switch(line):
+        case (Condiction_1):
+          //return output_fileName_1;
+        case (Condiction_2):
+          //return output_fileName_2;
+        case (Condiction_3):
+          //return output_fileName_3;       
+  }
 }
