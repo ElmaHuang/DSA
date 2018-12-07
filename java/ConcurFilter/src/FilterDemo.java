@@ -3,6 +3,9 @@
  *Author : ElmaHuang
  */
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class FilterDemo {
 
@@ -10,8 +13,24 @@ public class FilterDemo {
 		// TODO Auto-generated method stub
 		String DirName = "C:\\Users\\24681\\Desktop\\file";
 		String[] fileName = getFileName(DirName);
+		String new_content;
 		for(String file_name:fileName) {
-			filterFile(DirName+"\\"+file_name);
+			new_content = filterFile(DirName+"\\"+file_name);
+
+			//write new file content
+			writeFile(DirName+"\\fix_"+file_name,new_content);
+		}		
+	}
+
+
+	private static void writeFile(String file_name, String content) {
+		// TODO Auto-generated method stub
+		try {
+			System.out.println(content);
+			Files.write(Paths.get(file_name),content.getBytes(),StandardOpenOption.CREATE);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}		
 	}
 
@@ -29,18 +48,15 @@ public class FilterDemo {
 	}
 	
 
-	private static void filterFile(String file_name) {
+	private static String filterFile(String file_name) {
 		// TODO Auto-generated method stub
+		String new_content = null;
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(file_name));
-			String line = reader.readLine();
-			while(line != null) {
-				String new_line = filterLine(line);
-				//write new_line into file
-				
-				//read next line
-				line = reader.readLine();
-			}		
+			//read file content
+			String input_content = new String(Files.readAllBytes(Paths.get(file_name)),"UTF-8");
+			
+			//filter
+			new_content = filter(input_content);			
 		
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -48,25 +64,24 @@ public class FilterDemo {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
+		return new_content;
 	}
 
 
-	private static String filterLine(String line) {
+	private static String filter(String content) {
 		// TODO Auto-generated method stub
-		String[] Pattern = line.split("\\|");
+		String[] Pattern = content.split("\\|");
 		for(String tokens:Pattern) {
 			switch(tokens) {
 				case "5113":
 				case "6113":
 				case "7113":
 				case "8113":
-					//System.out.println(line);
-					line = line.replace(tokens, "F35F");
-					//System.out.println(line);					
+					content = content.replace(tokens, "F35F");
 			}
 		}
-		return line;
+		return content;
 	}
 
 }
