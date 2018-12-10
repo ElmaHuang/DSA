@@ -7,26 +7,34 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class FilterDemo {
+public class ConcurFilter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String DirName = "C:\\Users\\24681\\Desktop\\file";
+		String DirName = Paths.get("").toAbsolutePath().toString();//"C:\\Users\\24681\\Desktop\\file";
 		String[] fileName = getFileName(DirName);
-		String new_content;
+		//String new_content;
 		for(String file_name:fileName) {
-			new_content = filterFile(DirName+"\\"+file_name);
-
+			System.out.println("Input TXT File:"+file_name);
+			String new_content = filterFile(DirName+"\\"+file_name);
+			
+			try {
 			//write new file content
-			writeFile(DirName+"\\fix_"+file_name,new_content);
-		}		
+				writeFile(DirName+"\\fix_"+file_name,new_content);
+			}catch(Exception e){
+				System.out.println("create new file fail");
+				continue;
+			}
+		}
+		
+		//remove old file ??
 	}
 
 
 	private static void writeFile(String file_name, String content) {
 		// TODO Auto-generated method stub
 		try {
-			System.out.println(content);
+			//System.out.println(content);
 			Files.write(Paths.get(file_name),content.getBytes(),StandardOpenOption.CREATE);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -41,8 +49,11 @@ public class FilterDemo {
 		String[] fn = new String[4];
 		int i = 0;
 		for(String name :f.list()) {
-			fn[i]=name;
-			i++;
+			if(name.endsWith(".txt") && !(name.startsWith("fix"))) {
+				//System.out.println("n:"+name);
+				fn[i]=name;
+				i++;
+			}
 		}			
 		return fn;
 	}
