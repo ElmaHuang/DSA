@@ -1,6 +1,5 @@
 # Table of contents
 
-* [Online Course](README.md)
-* [DSA](dsa.md)
-* [程設](cheng.md)
+* [Initial page](README.md)
+* [C primer](c-primer-zhong-wen-ban.md)
 
