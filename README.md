@@ -1,6 +1,8 @@
-# Online Course
+# Define
 
-{% embed url="http://coderalo.logdown.com/posts/2017/01/15/want-to-study-computer-science-2" %}
+{% embed url="https://www.laurencegellert.com/2012/08/what-is-a-full-stack-developer/" %}
 
+{% embed url="https://www.ithome.com.tw/voice/97360" %}
 
+{% embed url="https://tw.alphacamp.co/blog/2018-07-05-18418" %}
 
