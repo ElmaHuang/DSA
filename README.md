@@ -1,8 +1,12 @@
-# Define
+# Reference
 
-{% embed url="https://www.laurencegellert.com/2012/08/what-is-a-full-stack-developer/" %}
+{% embed url="https://zh.m.wikipedia.org/zh-tw/QEMU" %}
 
-{% embed url="https://www.ithome.com.tw/voice/97360" %}
+{% embed url="https://www.slideshare.net/mobile/RampantJeff/qemu-binary-translation" %}
 
-{% embed url="https://tw.alphacamp.co/blog/2018-07-05-18418" %}
+{% embed url="https://hk.saowen.com/a/6abb4c1e1061b6a53831b89da56752ebf7e2d91f507be2cb17fdb14541a7f8cd " %}
+
+{% embed url="https://zh.wikipedia.org/wiki/LXC" %}
+
+
 
